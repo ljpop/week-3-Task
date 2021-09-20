@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600;700;900&display=swap");
+
+:root {
+  --dark-green: #4d96a9;
+  --blue: #8fe3f9;
+  --purple: #855fb1;
+  --pink: #d9b8ff;
+  --black: #28283d;
+  --white: #fafafa;
+  --gray: #87879d;
+
+  --dark-green-opacity: rgba(77, 150, 168, 0.9);
+  --light-gray: #d8d8d8;
+}
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 18px;
+  line-height: 18px;
+}
+
+header {
+  height: 100vh;
+}
+
+section {
+  height: 100vh;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 900;
+}
+
+.overline {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--dark-green);
+  font-weight: 900;
+}
+
+footer {
+  background: linear-gradient(
+      0deg,
+      var(--dark-green-opacity),
+      var(--dark-green-opacity)
+    ),
+    url("/assets/desktop/image-footer.jpg");
+  background-size: cover;
+  color: var(--white);
+  height: 300px; /*TODO*/
+}
+
+/*------------------------------*/
+/*Buttons*/
+.button {
+  display: inline-block;
+  color: var(--white);
+  text-align: center;
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.button-green {
+  background-color: var(--dark-green);
+}
+
+.button-purple {
+  background-color: var(--purple);
+}
+
+/*------------------------------*/
+
+.section-number {
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50%;
+  letter-spacing: 1px;
+  color: var(--gray);
+  border: 1px solid var(--light-gray);
+  padding: 14px 17px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.images {
+  max-width: 1140px;
+}
+
+.images :first-child {
+  margin-left: 4%;
+}
+
+.images :last-child {
+  margin-right: 4%;
+}
+
+.image {
+  float: left;
+  width: 23%;
+  border-radius: 10%;
+  padding: 1%;
+}
+
+footer h2 {
+  float: left;
+}
+
+footer button {
+  float: right;
+}
+
+@media screen and (min-width: 1140px) {
+  .images {
+    margin: 0 auto;
+  }
+}
