@@ -10,6 +10,8 @@
   --gray: #87879d;
 
   --dark-green-opacity: rgba(77, 150, 168, 0.9);
+  --dark-green-hover: #71c0d4;
+  --purple-hover: #b18bdd;
   --light-gray: #d8d8d8;
 }
 .clearfix {
@@ -38,11 +40,12 @@ body {
 }
 
 header {
-  height: 100vh;
+  margin: 0 auto; /*height: 100vh;*/
 }
 
 section {
-  height: 100vh;
+  margin: 0 auto;
+  /* height: 100vh;*/
 }
 
 h1 {
@@ -66,51 +69,84 @@ h2 {
   font-weight: 900;
 }
 
-footer {
-  background: linear-gradient(
-      0deg,
-      var(--dark-green-opacity),
-      var(--dark-green-opacity)
-    ),
-    url("/assets/desktop/image-footer.jpg");
-  background-size: cover;
-  color: var(--white);
-  height: 300px; /*TODO*/
-}
-
 /*------------------------------*/
 /*Buttons*/
 .button {
   display: inline-block;
   color: var(--white);
   text-align: center;
-  padding: 20px 40px;
   border-radius: 50px;
   font-weight: 700;
+  transition-duration: 0.5s;
+  margin: 0 auto;
 }
 
-.button-green {
+/* What button*/
+.button-what {
+  background-color: var(--purple);
+  padding: 20px 25px;
+}
+
+.button-what:hover {
+  background-color: var(--purple-hover);
+}
+
+.button-download {
+  padding: 20px 35px;
+}
+
+/* Download buttons*/
+header .button-download {
   background-color: var(--dark-green);
 }
 
-.button-purple {
+header .button-download:hover {
+  background-color: var(--dark-green-hover);
+}
+
+header .span-version {
+  color: var(--blue);
+}
+
+footer .button-download {
   background-color: var(--purple);
 }
 
-/*------------------------------*/
+footer .button-download:hover {
+  background-color: var(--purple-hover);
+}
 
+footer .span-version {
+  color: var(--pink);
+}
+/*------------------------------*/
 .section-number {
+  margin: 0 auto;
+  text-align: center;
+}
+.number {
   display: inline-block;
   font-size: 16px;
   border-radius: 50%;
   letter-spacing: 1px;
   color: var(--gray);
   border: 1px solid var(--light-gray);
-  padding: 14px 17px;
+  width: 56px;
+  height: 56px;
+  padding: calc((56px - 26px) / 2);
+  text-align: center;
+  text-justify: center;
   font-weight: 700;
   line-height: 26px;
 }
 
+.line {
+  border-right: 1px solid var(--light-gray);
+  height: 84px;
+  width: 1px;
+  margin: 0 auto;
+}
+/*------------------------------*/
 .images {
   max-width: 1140px;
 }
@@ -130,12 +166,37 @@ footer {
   padding: 1%;
 }
 
-footer h2 {
-  float: left;
+/*-----------------------------*/
+footer {
+  background: linear-gradient(
+      0deg,
+      var(--dark-green-opacity),
+      var(--dark-green-opacity)
+    ),
+    url("/assets/desktop/image-footer.jpg");
+  background-size: cover;
+
+  /* height: 300px; TODO: */
 }
 
-footer button {
-  float: right;
+.footer-content {
+  max-width: 1110px;
+  margin: 0 auto;
+  color: var(--white);
+  display: flex;
+  padding: 100px 5px; /*TODO:*/
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  flex: 1;
+}
+
+.footer-box {
+  width: 29.3333%;
+  display: flex;
+  margin: 1%;
+  padding: 1%;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1140px) {
