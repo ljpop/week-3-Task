@@ -14,17 +14,6 @@
   --purple-hover: #b18bdd;
   --light-gray: #d8d8d8;
 }
-.clearfix {
-  zoom: 1;
-}
-
-.clearfix:after {
-  content: ".";
-  clear: both;
-  display: block;
-  height: 0;
-  visibility: hidden;
-}
 
 * {
   margin: 0;
@@ -32,6 +21,7 @@
   box-sizing: border-box;
   font-family: "Red Hat Display", sans-serif;
 }
+
 body {
   background-color: var(--white);
   color: var(--black);
@@ -40,12 +30,14 @@ body {
 }
 
 header {
-  margin: 0 auto; /*height: 100vh;*/
+  margin: 0 auto;
+  height: 500px; /*TODO: ne valja ovako*/
 }
 
 section {
   margin: 0 auto;
-  /* height: 100vh;*/
+  margin-top: 100px; /*TODO: ne valja ovako*/
+  /*height: 500px; /*TODO: ne valja ovako*/
 }
 
 h1 {
@@ -69,39 +61,30 @@ h2 {
   font-weight: 900;
 }
 
-/*------------------------------*/
-/*Buttons*/
+/*--BUTTONS----------------------------*/
 .button {
   display: inline-block;
   color: var(--white);
   text-align: center;
   border-radius: 50px;
   font-weight: 700;
+  transition-property: background-image;
   transition-duration: 0.5s;
   margin: 0 auto;
 }
 
-/* What button*/
 .button-what {
   background-color: var(--purple);
   padding: 20px 25px;
-}
-
-.button-what:hover {
-  background-color: var(--purple-hover);
 }
 
 .button-download {
   padding: 20px 35px;
 }
 
-/* Download buttons*/
+/* COLORS:*/
 header .button-download {
   background-color: var(--dark-green);
-}
-
-header .button-download:hover {
-  background-color: var(--dark-green-hover);
 }
 
 header .span-version {
@@ -109,21 +92,43 @@ header .span-version {
 }
 
 footer .button-download {
+  /*TODO: nije isto kad se hover*/
   background-color: var(--purple);
-}
-
-footer .button-download:hover {
-  background-color: var(--purple-hover);
 }
 
 footer .span-version {
   color: var(--pink);
 }
-/*------------------------------*/
+
+/*TODO: better idea - jedan hover!!!!!!*/
+/*.button:hover {  
+  opacity: 0.5;
+}
+*/
+
+footer .button-download:hover {
+  background-color: var(--purple-hover);
+}
+
+header .button-download:hover {
+  background-color: var(--dark-green-hover);
+}
+
+.button-what:hover {
+  background-color: var(--purple-hover);
+}
+
+/*--SECTION NUMBERS--------------------*/
+
 .section-number {
   margin: 0 auto;
   text-align: center;
+  z-index: 1;
+  margin-bottom: calc(-56px / 2);
+  /* position: relative; /*Relative way:*/
+  /*bottom: calc(-56px / 2); */
 }
+
 .number {
   display: inline-block;
   font-size: 16px;
@@ -138,6 +143,7 @@ footer .span-version {
   text-justify: center;
   font-weight: 700;
   line-height: 26px;
+  background: var(--white);
 }
 
 .line {
@@ -146,27 +152,25 @@ footer .span-version {
   width: 1px;
   margin: 0 auto;
 }
-/*------------------------------*/
+/*--IMAGES----------------------------*/
+
 .images {
+  width: 90%;
   max-width: 1140px;
-}
-
-.images :first-child {
-  margin-left: 4%;
-}
-
-.images :last-child {
-  margin-right: 4%;
+  display: flex; /*TODO: clearfix html delte*/
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 
 .image {
-  float: left;
   width: 23%;
-  border-radius: 10%;
-  padding: 1%;
+  border-radius: 5%;
+  display: flex;
 }
 
-/*-----------------------------*/
+/*--FOOTER------------------------*/
+
 footer {
   background: linear-gradient(
       0deg,
@@ -175,8 +179,6 @@ footer {
     ),
     url("/assets/desktop/image-footer.jpg");
   background-size: cover;
-
-  /* height: 300px; TODO: */
 }
 
 .footer-content {
@@ -184,7 +186,7 @@ footer {
   margin: 0 auto;
   color: var(--white);
   display: flex;
-  padding: 100px 5px; /*TODO:*/
+  padding: 100px 5px; /*TODO: edit height 308-428 ??*/
   align-items: center;
   justify-content: space-around;
   width: 90%;
@@ -197,10 +199,4 @@ footer {
   margin: 1%;
   padding: 1%;
   justify-content: center;
-}
-
-@media screen and (min-width: 1140px) {
-  .images {
-    margin: 0 auto;
-  }
 }
