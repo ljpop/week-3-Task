@@ -29,27 +29,19 @@ body {
   line-height: 18px;
 }
 
-header {
-  margin: 0 auto;
-  height: 500px; /*TODO: ne valja ovako*/
-}
-
-section {
-  margin: 0 auto;
-  margin-top: 100px; /*TODO: ne valja ovako*/
-  /*height: 500px; /*TODO: ne valja ovako*/
-}
-
 h1 {
   font-size: 64px;
   line-height: 64px;
   font-weight: 900;
+  text-align: center;
+  padding-bottom: max(2.5%, 25px);
 }
 
 h2 {
   font-size: 40px;
   line-height: 44px;
   font-weight: 900;
+  text-align: center;
 }
 
 .overline {
@@ -59,9 +51,48 @@ h2 {
   text-transform: uppercase;
   color: var(--dark-green);
   font-weight: 900;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 26px;
+}
+/*--HEADER-----------------------------*/
+
+header .logo {
+  display: block;
+  margin: max(5.5%, 50px) auto;
+}
+
+header p {
+  text-align: center;
+}
+
+header .buttons {
+  text-align: center;
+}
+
+.text-container {
+  width: 540px;
+  max-width: 95%;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+
+/*--SECTION-----------------------------*/
+section p {
+  margin-top: 30px;
+  text-align: center;
 }
 
 /*--BUTTONS----------------------------*/
+
+.buttons {
+  max-width: 70%;
+  margin: 20px auto;
+}
+
 .button {
   display: inline-block;
   color: var(--white);
@@ -70,7 +101,7 @@ h2 {
   font-weight: 700;
   transition-property: background-image;
   transition-duration: 0.5s;
-  margin: 0 auto;
+  margin: 10px 10px 5px 10px;
 }
 
 .button-what {
@@ -92,7 +123,6 @@ header .span-version {
 }
 
 footer .button-download {
-  /*TODO: nije isto kad se hover*/
   background-color: var(--purple);
 }
 
@@ -100,9 +130,9 @@ footer .span-version {
   color: var(--pink);
 }
 
-/*TODO: better idea - jedan hover!!!!!!*/
-/*.button:hover {  
-  opacity: 0.5;
+/*Another idea: only one hover - but complicate to choose opaciy
+.button:hover {
+  opacity: 0.7;
 }
 */
 
@@ -125,8 +155,10 @@ header .button-download:hover {
   text-align: center;
   z-index: 1;
   margin-bottom: calc(-56px / 2);
-  /* position: relative; /*Relative way:*/
-  /*bottom: calc(-56px / 2); */
+
+  /*Relative way:
+   position: relative; 
+  bottom: calc(-56px / 2); */
 }
 
 .number {
@@ -152,22 +184,28 @@ header .button-download:hover {
   width: 1px;
   margin: 0 auto;
 }
+
 /*--IMAGES----------------------------*/
 
 .images {
   width: 90%;
   max-width: 1140px;
-  display: flex; /*TODO: clearfix html delte*/
+  display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
+  justify-content: space-evenly;
+  margin: 65px auto;
+  flex-wrap: wrap;
 }
 
 .image {
   width: 23%;
+  margin: 3% 1%;
   border-radius: 5%;
   display: flex;
+  min-width: 150px;
+  justify-content: center;
 }
+/*TODO: 2+2 instead of 3+1*/
 
 /*--FOOTER------------------------*/
 
@@ -179,18 +217,21 @@ footer {
     ),
     url("/assets/desktop/image-footer.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .footer-content {
-  max-width: 1110px;
+  max-width: 1140px;
   margin: 0 auto;
   color: var(--white);
   display: flex;
-  padding: 100px 5px; /*TODO: edit height 308-428 ??*/
   align-items: center;
   justify-content: space-around;
   width: 90%;
-  flex: 1;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 60px 0;
+  min-height: 300px;
 }
 
 .footer-box {
@@ -199,4 +240,42 @@ footer {
   margin: 1%;
   padding: 1%;
   justify-content: center;
+}
+
+footer h2,
+footer p {
+  text-align: left;
+}
+
+@media screen and (max-width: 950px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-box {
+    height: 29.333%;
+    width: 100%;
+  }
+
+  footer h2 {
+    text-align: center;
+    width: 75%;
+  }
+
+  footer p {
+    text-align: center;
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer h2,
+  footer p {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
 }
