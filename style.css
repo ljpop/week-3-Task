@@ -34,7 +34,7 @@ h1 {
   line-height: 64px;
   font-weight: 900;
   text-align: center;
-  padding-bottom: max(2.5%, 25px);
+  margin-bottom: 32px;
 }
 
 h2 {
@@ -42,6 +42,7 @@ h2 {
   line-height: 44px;
   font-weight: 900;
   text-align: center;
+  margin-bottom: 32px;
 }
 
 .overline {
@@ -58,6 +59,8 @@ h2 {
 p {
   line-height: 26px;
   text-align: center;
+  color: var(--gray);
+  margin-bottom: 32px;
 }
 
 /*TODO: check*/
@@ -74,6 +77,7 @@ footer,
   justify-items: center;
   align-items: stretch;
   margin: 0 auto;
+  margin-bottom: 110px;
 }
 
 .header-box {
@@ -92,12 +96,12 @@ footer,
 }
 .img-left {
   order: 1;
-  margin-left: -3%;
+  margin-left: -4%;
 }
 
 .img-right {
   order: 3;
-  margin-right: -3%;
+  margin-right: -4%;
 }
 
 header .text-container {
@@ -135,23 +139,11 @@ header .text-container {
 /*--HEADER--------------------*/
 header .logo {
   display: block;
-  margin: max(5.5%, 50px) auto;
-  margin-bottom: 5%;
-}
-
-header .buttons {
-  text-align: center;
+  margin: 80px auto 64px auto;
 }
 
 header .text-container {
-  width: 540px;
-  max-width: 95%;
-  margin: 0 auto;
-}
-
-.text-container p {
-  width: 540px;
-  max-width: 90%;
+  max-width: 540px;
   margin: 0 auto;
 }
 
@@ -160,40 +152,42 @@ header .text-container {
 }
 
 /*--SECTION-----------------------------*/
-.section p {
-  padding: 30px 0;
-}
 
 .section .text-container {
   width: 540px;
   max-width: 95%;
   margin: 0 auto;
+  margin-bottom: 80px;
 }
 
 /*--BUTTONS----------------------------*/
 
 .buttons {
-  margin: 5px auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 
 .button {
-  display: inline-block;
+  font-size: 16px;
+  font-family: "Red Hat Display", sans-serif;
   color: var(--white);
   text-align: center;
+  border: none;
   border-radius: 50px;
   font-weight: 700;
   transition-property: background-image;
   transition-duration: 0.5s;
-  margin: 10px 10px 5px 10px;
+  height: 58px;
 }
 
 .button-what {
   background-color: var(--purple);
-  padding: 20px 25px;
+  width: 139px;
 }
 
 .button-download {
-  padding: 20px 35px;
+  width: 193px;
 }
 
 /* COLORS:*/
@@ -236,16 +230,23 @@ header .button-download:hover {
 .section-number {
   margin: 0 auto;
   text-align: center;
-  z-index: 1;
+  z-index: 10;
   margin-bottom: calc(-56px / 2);
-
+  background-color: var(--white);
   /*Relative way:
    position: relative; 
   bottom: calc(-56px / 2); */
 }
 
 .number {
-  display: inline-block;
+  /*FIXME: overflow problem kad se radi kao flex*/
+  /* display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center; 
+    z-index: 10;
+  margin: 0 auto;
+  overflow: visible;*/
   font-size: 16px;
   border-radius: 50%;
   letter-spacing: 1px;
@@ -253,12 +254,13 @@ header .button-download:hover {
   border: 1px solid var(--light-gray);
   width: 56px;
   height: 56px;
+  display: inline-block;
   padding: calc((56px - 26px) / 2);
   text-align: center;
   text-justify: center;
   font-weight: 700;
   line-height: 26px;
-  background: var(--white);
+  background-color: var(--white);
 }
 
 .line {
@@ -268,30 +270,37 @@ header .button-download:hover {
   margin: 0 auto;
 }
 
+section h2 {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*--IMAGES----------------------------*/
 
 .images {
-  width: 90%;
   max-width: 1140px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  margin: 65px auto;
+  margin: 80px auto 65px auto;
   flex-wrap: wrap;
+  gap: 11px;
+  justify-content: space-between;
 }
 
 .image {
-  width: 23%;
-  margin: 3% 1%;
+  width: 100%;
   border-radius: 5%;
   display: flex;
-  min-width: 150px;
+  max-width: 250px;
   justify-content: center;
 }
-/*TODO: 2+2 instead of 3+1*/
 
 /*--FOOTER------------------------*/
-
+footer p {
+  color: var(--white);
+  margin-bottom: 0;
+}
 footer {
   background: linear-gradient(
       0deg,
@@ -318,11 +327,13 @@ footer {
 }
 
 .footer-box {
-  width: 29.3333%;
+  width: 33.333%;
   display: flex;
-  margin: 1%;
   padding: 1%;
   justify-content: center;
+}
+footer h2 {
+  margin-bottom: 0;
 }
 
 footer h2,
@@ -332,12 +343,25 @@ footer p {
 
 /*--MEDIA-QUERIES---------------------------------*/
 @media screen and (max-width: 1200px) {
+  footer h2 {
+    margin-bottom: 32px;
+  }
+
+  footer p {
+    margin: 0 15px 32px 15px;
+  }
+
+  .header-flex {
+    margin-bottom: 80px;
+  }
+
   .text-container {
     max-width: 540px;
     margin: 0 auto;
   }
   .img-group {
     flex-basis: 50%;
+    align-items: flex-end;
   }
 
   .img-left {
@@ -352,14 +376,42 @@ footer p {
     order: 3;
   }
 
+  .img-row-5 {
+    padding-top: 0;
+  }
   .img-row-2,
   .img-row-4,
   .img-row-6 {
     padding-bottom: 20%;
   }
+
+  .image {
+    max-width: 170px;
+  }
+  .images {
+    justify-content: center;
+  }
 }
 
 @media screen and (max-width: 950px) {
+  footer p {
+    padding: 0 50px;
+  }
+
+  header .logo {
+    margin-top: 48px;
+  }
+
+  h1 {
+    margin-bottom: 24px;
+    margin-top: 72px;
+  }
+
+  p,
+  footer p {
+    text-align: center;
+  }
+
   .footer-content {
     flex-direction: column;
   }
@@ -374,11 +426,6 @@ footer p {
     width: 75%;
   }
 
-  footer p {
-    text-align: center;
-    width: 85%;
-  }
-
   footer {
     background: linear-gradient(
         0deg,
@@ -391,15 +438,84 @@ footer p {
   }
 }
 
-@media screen and (max-width: 500px) {
-  footer h2,
+@media screen and (max-width: 720px) {
+  .section .text-container {
+    margin-bottom: 64px;
+  }
+
+  .image {
+    max-width: 250px;
+  }
+
+  .images {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    max-width: 170px;
+  }
+
+  .images {
+    margin-left: 24px;
+    margin-right: 24px;
+    gap: 25px;
+  }
+
   footer p {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    margin-top: 48px;
+  }
+
+  section h2 {
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header .logo {
+    margin-bottom: 54px;
+  }
+
+  p {
+    margin: 0 24px 32px 24px;
+  }
+
+  .header-flex {
+    margin-bottom: 64px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .images {
+    gap: 25px;
+    margin: 64px, 24px;
+  }
+
+  .image {
+    max-width: 150px;
+  }
+  footer h2 {
     width: 90%;
   }
 
   h1 {
     font-size: 40px;
     line-height: 44px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 36px;
   }
 
   footer {
@@ -411,5 +527,16 @@ footer p {
       url("/assets/mobile/image-footer.jpg");
     background-size: cover;
     background-position: center;
+  }
+}
+
+@media screen and (max-width: 372px) {
+  .image {
+    max-width: 220px;
+  }
+
+  h2 {
+    margin-left: 15px;
+    margin-right: 15px;
   }
 }
