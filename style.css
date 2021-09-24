@@ -307,7 +307,7 @@ footer {
       var(--dark-green-opacity),
       var(--dark-green-opacity)
     ),
-    url("/assets/desktop/image-footer.jpg");
+    url("assets/desktop/image-footer.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -432,7 +432,7 @@ footer p {
         var(--dark-green-opacity),
         var(--dark-green-opacity)
       ),
-      url("/assets/tablet/image-footer.jpg");
+      url("assets/tablet/image-footer.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -524,7 +524,7 @@ footer p {
         var(--dark-green-opacity),
         var(--dark-green-opacity)
       ),
-      url("/assets/mobile/image-footer.jpg");
+      url("assets/mobile/image-footer.jpg");
     background-size: cover;
     background-position: center;
   }
